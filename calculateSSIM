@@ -1,0 +1,16 @@
+coverIm = imread(strcat("C:\Users\mcrossley\Desktop\images\lenna.png"));
+stegoIm = imread(strcat("C:\Users\mcrossley\Desktop\images\stegoImage.png"));
+%Read in the 2 images
+
+greyCoverIm=im2gray(coverIm);
+greyStegoIm=im2gray(stegoIm);
+%Covert images to greyscale
+
+ssimval = ssim(greyCoverIm,greyStegoIm);
+%Calculate SSIM value
+
+imshow(greyStegoIm);
+%Display the greyscale stego-image (to put in Appendix)
+
+fprintf('The SSIM between the images is %1.16g\n',ssimval)
+%Output all significant figures of the SSIM value
